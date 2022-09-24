@@ -1,2 +1,2 @@
 # sql-injection
-SQL Injection lab for Cyber Security class
+SQL Injection simulation lab for Cyber Security class
