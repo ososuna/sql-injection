@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/ososuna/sql-injection#readme",
   "dependencies": {
+    "colors": "^1.4.0",
+    "inquirer": "^9.1.2",
     "mysql2": "^2.3.3",
     "nodemon": "^2.0.20"
   }

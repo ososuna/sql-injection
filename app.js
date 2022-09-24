@@ -1,12 +1,9 @@
 const { dbConnection } = require('./database/config');
+const { getUsers } = require('./helpers/user');
 
 const main = async () => {
   const db = dbConnection();
-  db.query(
-    'SELECT * FROM `user`',
-    ( err, results ) => 
-      console.log( results )
-  );
+  getUsers( db );
 }
 
 main();
