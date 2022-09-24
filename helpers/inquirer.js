@@ -1,4 +1,4 @@
-const inquirer = require("inquirer");
+const inquirer = require('inquirer');
 require('colors');
 
 const questions = [
@@ -74,7 +74,6 @@ const readInput = async( message ) => {
 			}
 		}
 	];
-	
 	const { desc } = await inquirer.prompt( question );
 	return desc;
 }
@@ -97,5 +96,4 @@ module.exports = {
 	pause,
 	readInput,
 	confirm
-
 }

@@ -12,7 +12,6 @@ const dbConnection = () => {
       console.log( err );
       throw new Error('Error connecting to database');
     }
-    console.log("Connected to database!");
   });
   return connection;
 }
