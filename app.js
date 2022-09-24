@@ -8,10 +8,6 @@ const main = async () => {
     console.log('\n');
     opt = await inquirerMenuAuth();
     switch ( opt ) {
-      case '0':
-        console.clear();
-        console.log('Bye!');
-        process.exit( 0 );
       case '1':
         console.log('first option');
         break;
@@ -19,10 +15,9 @@ const main = async () => {
         console.log('second option');
         break;
       case '3':
-        console.log('third option');
-        break;
-      case '4':
-        break;
+        console.clear();
+        console.log('Bye!');
+        process.exit( 0 );
       default:
         break;
     }

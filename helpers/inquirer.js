@@ -16,7 +16,7 @@ const questionsAuth = [
 				name: `${'2.'.green} Sign up`
 			},
 			{
-				value: '0',
+				value: '3',
 				name: `${'3.'.green} Exit`
 			}
 		]
