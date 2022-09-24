@@ -31,11 +31,11 @@ const questionsHome = [
 			},
 			{
 				value: '2',
-				name: `${'2.'.green} Delete book`
+				name: `${'2.'.green} List books`
 			},
 			{
 				value: '3',
-				name: `${'3.'.green} List books`
+				name: `${'3.'.green} Delete book`
 			},
 			{
 				value: '4',

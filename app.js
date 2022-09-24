@@ -47,16 +47,35 @@ const home = async () => {
     opt = await inquirerMenuHome();
     switch ( opt ) {
       case '1':
-        console.log('first option');
+        const title = await readInput('Title:');
+        const author = await readInput('Author:');
+        db.query(
+          'INSERT INTO `book` (title, author, bookshelf_id, customer_id) VALUES (?, ?, 1, 1)',
+          [ title, author ],
+          ( err, results ) => {
+            if( err ) throw err;
+            console.log('Book added!'.green);
+          }
+        );
         break;
       case '2':
-        console.log('second option');
+        db.query(
+          'SELECT * FROM `book`',
+          ( err, results ) => {
+            if( results.length === 0 ) {
+              console.log('\nNo books added yet'.red);
+            } else {
+              console.log( results );
+            }
+          }
+        );
         break;
       case '3':
         console.log('third option');
         break;
       case '4':
-        console.log('log out');
+        opt = '0';
+        auth();
         break;
       default:
         break;
