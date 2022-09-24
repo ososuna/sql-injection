@@ -1,13 +1,17 @@
 const { dbConnection } = require('./database/config');
-const { inquirerMenu, pause, readInput, confirm } = require('./helpers/inquirer');
+const { inquirerMenuAuth, pause, readInput, confirm } = require('./helpers/inquirer');
 
 const main = async () => {
   const db = dbConnection();
   let opt = '';
   do {
     console.log('\n');
-    opt = await inquirerMenu();
+    opt = await inquirerMenuAuth();
     switch ( opt ) {
+      case '0':
+        console.clear();
+        console.log('Bye!');
+        process.exit( 0 );
       case '1':
         console.log('first option');
         break;
@@ -18,15 +22,6 @@ const main = async () => {
         console.log('third option');
         break;
       case '4':
-        console.log('fourth option');
-        break;
-      case '5':
-        console.log('fifth option');
-        break;
-      case '6':
-        console.log('sixth option');
-        break;
-      case '7':
         break;
       default:
         break;

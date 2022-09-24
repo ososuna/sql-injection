@@ -1,7 +1,29 @@
 const inquirer = require('inquirer');
 require('colors');
 
-const questions = [
+const questionsAuth = [
+	{
+		type: 'list',
+		name: 'option',
+		message: 'Enter an option',
+		choices: [
+			{
+				value: '1',
+				name: `${'1.'.green} Log in`
+			},
+			{
+				value: '2',
+				name: `${'2.'.green} Sign up`
+			},
+			{
+				value: '0',
+				name: `${'3.'.green} Exit`
+			}
+		]
+	}
+];
+
+const questionsHome = [
 	{
 		type: 'list',
 		name: 'option',
@@ -47,12 +69,21 @@ const questionPause = [
 	}
 ];
 
-const inquirerMenu = async() => {
+const inquirerMenuAuth = async() => {
 	console.clear();
 	console.log('======================'.green);
 	console.log('Select an option'.white);
 	console.log('======================\n'.green);
-	const { option } = await inquirer.prompt( questions );
+	const { option } = await inquirer.prompt( questionsAuth );
+	return option;
+}
+
+const inquirerMenuHome = async() => {
+	console.clear();
+	console.log('======================'.green);
+	console.log('Select an option'.white);
+	console.log('======================\n'.green);
+	const { option } = await inquirer.prompt( questionsHome );
 	return option;
 }
 
@@ -92,7 +123,8 @@ const confirm = async( message ) => {
 }
 
 module.exports = {
-	inquirerMenu,
+	inquirerMenuAuth,
+	inquirerMenuHome,
 	pause,
 	readInput,
 	confirm
