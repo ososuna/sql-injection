@@ -1,5 +1,7 @@
+const { dbConnection } = require('./database/config');
+
 const main = async () => {
-  console.log("hello world");
+  dbConnection();
 }
 
 main();
