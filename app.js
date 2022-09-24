@@ -56,15 +56,6 @@ const home = async () => {
         console.log('third option');
         break;
       case '4':
-        console.log('fourth option');
-        break;
-      case '5':
-        console.log('fifth option');
-        break;
-      case '6':
-        console.log('sixth option');
-        break;
-      case '7':
         console.log('log out');
         break;
       default:

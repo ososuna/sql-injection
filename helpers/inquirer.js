@@ -27,32 +27,20 @@ const questionsHome = [
 		choices: [
 			{
 				value: '1',
-				name: `${'1.'.green} New customer`
+				name: `${'1.'.green} New book`
 			},
 			{
 				value: '2',
-				name: `${'2.'.green} New book`
+				name: `${'2.'.green} Delete book`
 			},
 			{
 				value: '3',
-				name: `${'3.'.green} New bookshelf`
+				name: `${'3.'.green} List books`
 			},
 			{
 				value: '4',
-				name: `${'4.'.green} List customers`
-			},
-			{
-				value: '5',
-				name: `${'5.'.green} List books`
-			},
-			{
-				value: '6',
-				name: `${'6.'.green} List bookshelves`
-			},
-			{
-				value: '7',
-				name: `${'7.'.green} Log out`
-			},
+				name: `${'4.'.green} Log out`
+			}
 		]
 	}
 ];
