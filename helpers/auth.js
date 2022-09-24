@@ -1,9 +1,5 @@
-const login = ( db ) => {
-  db.query(
-    'SELECT * FROM `user`',
-    ( err, results ) => 
-      console.log( results )
-  );
+const login = ( db, email, password ) => {
+  
 }
 
 const logout = ( db ) => {
