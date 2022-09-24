@@ -72,7 +72,7 @@ const questionPause = [
 const inquirerMenuAuth = async() => {
 	console.clear();
 	console.log('======================'.green);
-	console.log('Select an option'.white);
+	console.log('Welcome to My Library!'.white);
 	console.log('======================\n'.green);
 	const { option } = await inquirer.prompt( questionsAuth );
 	return option;
@@ -81,7 +81,7 @@ const inquirerMenuAuth = async() => {
 const inquirerMenuHome = async() => {
 	console.clear();
 	console.log('======================'.green);
-	console.log('Select an option'.white);
+	console.log('My Library'.white);
 	console.log('======================\n'.green);
 	const { option } = await inquirer.prompt( questionsHome );
 	return option;
