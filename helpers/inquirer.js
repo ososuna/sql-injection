@@ -13,11 +13,7 @@ const questionsAuth = [
 			},
 			{
 				value: '2',
-				name: `${'2.'.green} Sign up`
-			},
-			{
-				value: '3',
-				name: `${'3.'.green} Exit`
+				name: `${'2.'.green} Exit`
 			}
 		]
 	}
@@ -54,8 +50,8 @@ const questionsHome = [
 				name: `${'6.'.green} List bookshelves`
 			},
 			{
-				value: '0',
-				name: `${'0.'.green} Log out`
+				value: '7',
+				name: `${'7.'.green} Log out`
 			},
 		]
 	}

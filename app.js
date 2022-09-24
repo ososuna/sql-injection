@@ -30,9 +30,6 @@ const auth = async () => {
         );
         break;
       case '2':
-        console.log('second option');
-        break;
-      case '3':
         console.clear();
         console.log('Bye!');
         process.exit( 0 );
@@ -68,6 +65,7 @@ const home = async () => {
         console.log('sixth option');
         break;
       case '7':
+        console.log('log out');
         break;
       default:
         break;
