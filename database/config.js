@@ -14,6 +14,7 @@ const dbConnection = () => {
     }
     console.log("Connected to database!");
   });
+  return connection;
 }
 
 module.exports = {
