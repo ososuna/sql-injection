@@ -1,6 +1,6 @@
 # My Library - SQL Injection
 SQL Injection simulation lab for Cyber Security class
-<br><img src="assets/Little_Bobby_Tables.png"/>
+<br><br><img src="assets/Little_Bobby_Tables.png"/>
 ## Running the application locally
 First, install the dependencies:
 ```bash
