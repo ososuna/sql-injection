@@ -4,7 +4,8 @@
   "description": "SQL Injection lab for Cyber Security class",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/ososuna/sql-injection/issues"
   },
-  "homepage": "https://github.com/ososuna/sql-injection#readme"
+  "homepage": "https://github.com/ososuna/sql-injection#readme",
+  "dependencies": {
+    "nodemon": "^2.0.20"
+  }
 }
