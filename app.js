@@ -71,7 +71,25 @@ const home = async () => {
         );
         break;
       case '3':
-        console.log('third option');
+        const bookId = await readInput('Enter book id:');
+        db.query(
+          'SELECT * FROM `book` WHERE `id` = ?',
+          [ bookId ],
+          ( err, results ) => {
+            if( results.length === 0 ) {
+              console.log('\nBook not found'.red);
+            } else {
+              db.query(
+                'DELETE FROM `book` WHERE id = ?',
+                [ bookId ],
+                ( err, results ) => {
+                  if( err ) throw err;
+                  console.log('Book deleted!'.green);
+                }
+              );
+            }
+          }
+        );
         break;
       case '4':
         opt = '0';
