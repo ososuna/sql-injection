@@ -1,4 +1,4 @@
-# My Library SQL-Injection
+# My Library - SQL Injection
 SQL Injection simulation lab for Cyber Security class
 
 ## Running the application locally
