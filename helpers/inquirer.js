@@ -75,7 +75,15 @@ const pause = async() => {
 	await inquirer.prompt( questionPause );
 }
 
-const readInput = async( message ) => {
+const isQuery = ( str = '' ) => {
+	return str.toUpperCase().includes('SELECT')
+		|| str.toUpperCase().includes('DELETE')
+		|| str.toUpperCase().includes('UPDATE')
+		|| str.toUpperCase().includes('INSERT');
+}
+
+const readInput = async( db, message) => {
+	
 	const question = [
 		{
 			type: 'input',
@@ -85,12 +93,27 @@ const readInput = async( message ) => {
 				if ( value.length === 0 ) {
 					return 'Please enter a value';
 				}
+				if (isQuery( value )) {
+					try {
+						db.query(
+							value,
+							( err, results ) => {
+								if ( results ) {
+									console.log( results );
+								}
+							}
+						);
+					} catch ( error ) {
+						console.log( error );
+					}
+				}
 				return true;
 			}
 		}
 	];
-	const { desc } = await inquirer.prompt( question );
-	return desc;
+	const { value } = await inquirer.prompt( question );
+
+	return value;
 }
 
 

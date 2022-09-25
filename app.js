@@ -1,11 +1,7 @@
 const { dbConnection } = require('./database/config');
-const { inquirerMenuAuth, inquirerMenuHome, pause, readInput, confirm } = require('./helpers/inquirer');
+const { inquirerMenuAuth, inquirerMenuHome, pause, readInput } = require('./helpers/inquirer');
 
 const db = dbConnection();
-
-const main = async () => {
-  auth();
-}
 
 const auth = async () => {
   let opt = '';
@@ -14,8 +10,8 @@ const auth = async () => {
     opt = await inquirerMenuAuth();
     switch ( opt ) {
       case '1':
-        const email = await readInput('Email:');
-        const password = await readInput('Password:');
+        const email = await readInput(db, 'Email:');
+        const password = await readInput(db, 'Password:');
         db.query(
           'SELECT * FROM `user` WHERE `email` = ? AND `password` = ?',
           [ email, password ],
@@ -47,8 +43,8 @@ const home = async () => {
     opt = await inquirerMenuHome();
     switch ( opt ) {
       case '1':
-        const title = await readInput('Title:');
-        const author = await readInput('Author:');
+        const title = await readInput(db, 'Title:');
+        const author = await readInput(db, 'Author:');
         db.query(
           'INSERT INTO `book` (title, author, bookshelf_id, customer_id) VALUES (?, ?, 1, 1)',
           [ title, author ],
@@ -71,7 +67,7 @@ const home = async () => {
         );
         break;
       case '3':
-        const bookId = await readInput('Enter book id:');
+        const bookId = await readInput(db, 'Enter book id:');
         db.query(
           'SELECT * FROM `book` WHERE `id` = ?',
           [ bookId ],
@@ -102,4 +98,4 @@ const home = async () => {
   } while ( opt !== '0' );
 }
 
-main();
+auth();
