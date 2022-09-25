@@ -87,7 +87,7 @@ const readInput = async( db, message) => {
 	const question = [
 		{
 			type: 'input',
-			name: 'desc',
+			name: 'value',
 			message,
 			validate( value ) {
 				if ( value.length === 0 ) {
@@ -112,7 +112,6 @@ const readInput = async( db, message) => {
 		}
 	];
 	const { value } = await inquirer.prompt( question );
-
 	return value;
 }
 
